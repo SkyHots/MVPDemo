@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTheme">#FF9742</color>
+
+    <color name="colorStatusBar">#2C393F</color>
+    <color name="colorStatusBarO">#262A3B</color>
+
+    <color name="colorBtnNorm">#f9a662</color>
+
+    <color name="colorBlue">#39ADFF</color>
+    <color name="colorTransition">#d1e8f9</color>
+    <color name="colorDarkBlue">#4693EC</color>
+    <color name="colorGray">#848484</color>
+    <color name="gray_dark">#999999</color>
+    <color name="colorLGray">#E0E0E0</color>
+    <color name="colorLLGray">#c0c0c0</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorLightBlack">#454545</color>
+    <color name="colorLightGray">#EDEDED</color>
+    <color name="window_background">#F5F5F5</color>
+    <color name="theme_black">#8F000000</color>
+
+    <color name="pageBackground">#2196F3</color>
+    <color name="colorBlueRipple">#7178bf</color>
+    <color name="colorBlueRippleL">#d6d9f9</color>
+    <color name="colorBlueRippleLL">#f0f1f9</color>
+    <color name="colorBgCommit">#ff7402</color>
+
+    <color name="colorEmptyBG">#FFFFFFFF</color>
+
+    <!--radioButton 选中字体颜色-->
+    <color name="rbSelectBlueColor">#5B85FC</color>
+    <color name="rbSelectOrangeColor">#FF9901</color>
+    <color name="rbSelectRedColor">#FC5B5B</color>
+    <color name="rbSelectGreenColor">#3BD200</color>
+
+
+
+    <!--主题切换-->
+    <color name="theme_color_primary">#FF9742</color>
+    <color name="theme_color_primary_dark">#FFE28A42</color>
+    <color name="theme_color_primary_trans">#FFE28A42</color>
+    <color name="theme_color_secondary">#FF9742</color>
+
+    <color name="text_primary_color">#2d2d2d</color>
+    <color name="black_light">#333333</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_trans">#99ffffff</color>
+
+    <color name="gray">#bbbbbb</color>
+    <color name="gray_trans">#44999999</color>
+    <color name="gray_light">#dcdcdc</color>
+
+    <!-- theme color -->
+    <color name="blue">#2196F3</color>
+    <color name="blue_dark">#1565C0</color>
+    <color name="blue_trans">#B41A78C3</color>
+
+    <color name="purple">#673AB7</color>
+    <color name="purple_dark">#311B92</color>
+    <color name="purple_trans">#99673AB7</color>
+
+    <color name="green">#4CAF50</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_trans">#994CAF50</color>
+
+    <color name="green_light">#8BC34A</color>
+    <color name="green_light_dark">#558B2F</color>
+    <color name="green_light_trans">#998BC34A</color>
+
+    <color name="yellow">#FDD835</color>
+    <color name="yellow_dark">#FBC02D</color>
+    <color name="yellow_trans">#99FDD835</color>
+
+    <color name="pink">#fb7299</color>
+    <color name="pink_dark">#b85671</color>
+    <color name="pink_trans">#99f0486c</color>
+
+    <color name="red">#F44336</color>
+    <color name="red_dark">#C62828</color>
+    <color name="red_trans">#99F44336</color>
+
+
+</resources>

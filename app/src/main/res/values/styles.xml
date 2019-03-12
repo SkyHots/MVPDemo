@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppThemeFullscreen" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--pop Translate动画 from bottom to top-->
+    <style name="PopWindowAnimStyleBottomSlide" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit</item>
+    </style>
+
+    <!--loading样式-->
+    <style name="LoadingDialogStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--无边框-->
+        <item name="android:windowIsFloating">true</item><!--悬浮框-->
+        <item name="android:windowContentOverlay">@null</item><!--覆盖物-->
+        <!--<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>--><!--动画-->
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item><!--键盘-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景and透明度-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:backgroundDimEnabled">false</item><!--是否允许dialog以外的背景模糊-->
+    </style>
+
+    <!-- popup window 显示消失Alpha动画-->
+    <style name="PopWindowAnimStyleAlphaIn">
+        <item name="android:windowShowAnimation">@anim/dialog_enter</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowHideAnimation">@anim/dialog_exit</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
+
+    <style name="PopAnimCenter" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/top_in</item>
+        <item name="android:windowExitAnimation">@anim/top_out</item>
+    </style>
+
+    <style name="PopAnimLeftTop" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/right_top_in</item>
+        <item name="android:windowExitAnimation">@anim/right_top_out</item>
+    </style>
+
+</resources>
