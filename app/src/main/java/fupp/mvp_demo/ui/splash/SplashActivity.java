@@ -4,13 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
-import butterknife.OnClick;
+import java.util.concurrent.TimeUnit;
+
 import fupp.mvp_demo.R;
+import fupp.mvp_demo.base.RxSchedulers;
+import fupp.mvp_demo.ui.main.MainActivity;
+import rx.Observable;
 
 public class SplashActivity extends AppCompatActivity {
+
+    private boolean skip;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,20 +29,43 @@ public class SplashActivity extends AppCompatActivity {
         initView();
     }
 
-    @OnClick(R.id.btn_skip_splash)
-    public void onClick(View view) {
+    public void skip(View view) {
+        skip = true;
         startLogin();
     }
 
     private void startLogin() {
-        // TODO: 2019/3/12 0012 to main activity
-
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     public void initView() {
-        ImageView splash = findViewById(R.id.splash);
-        splash.setBackgroundResource(R.mipmap.splash);
-        startLogin();
+        Observable.timer(3500, TimeUnit.MILLISECONDS)
+                .compose(RxSchedulers.io_main())
+                .subscribe(aLong -> {
+                    if (!skip) {
+                        startLogin();
+                    } else {
+                        Log.e("Tag", "Skipped");
+                    }
+                }, throwable -> Log.e("Tag", "" + throwable.getMessage()));
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("Tag", "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("Tag", "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("Tag", "onDestroy: ");
+    }
 }
