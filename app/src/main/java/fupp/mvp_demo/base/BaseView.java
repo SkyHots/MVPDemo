@@ -5,4 +5,10 @@ package fupp.mvp_demo.base;
  */
 public interface  BaseView {
 
+    void showLoading(int requestCode);
+
+    void hideLoading(int requestCode);
+
+    void onError(int requestCode, Throwable throwable);
+
 }

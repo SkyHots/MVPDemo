@@ -2,21 +2,25 @@ package fupp.mvp_demo.base;
 
 import android.content.Context;
 
-public abstract class BasePresenter<M, T> {
+/**
+ * @Created by    fupp
+ * @CreateTime 2019/4/2 17:30
+ */
+
+public abstract class BasePresenter<M, V> {
 
     public Context context;
     public M mModel;
-    public T mView;
-    public RxManager mRxManager = new RxManager();
+    public V mView;
 
-    void setVM(T v, M m) {
+    void setVM(V v, M m) {
         this.mView = v;
         this.mModel = m;
         this.onStart();
     }
 
     public void onDestroy() {
-        mRxManager.clear();
+
     }
 
     public abstract void onStart();

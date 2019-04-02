@@ -3,8 +3,10 @@ package fupp.mvp_demo.base;
 import java.lang.reflect.ParameterizedType;
 
 /**
- *
+ * @Created by    fupp
+ * @CreateTime 2019/4/2 17:30
  */
+
 public class TUtil {
 
     @SuppressWarnings("unchecked")

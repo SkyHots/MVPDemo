@@ -40,14 +40,14 @@ import fupp.mvp_demo.view.SwipeBackLayout;
  *
  */
 
-public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends
+public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel> extends
         AppCompatActivity {
 
     public Unbinder mBinder;
     public Context mContext;
 
-    public T mPresenter;
-    public E mModel;
+    public P mPresenter;
+    public M mModel;
 
     private SwipeBackLayout swipeBackLayout;
     private ImageView ivShadow;

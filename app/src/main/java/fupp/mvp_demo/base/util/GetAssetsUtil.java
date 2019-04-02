@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * get Assets
+ * @Created by    fupp
+ * @CreateTime 2019/4/2 17:26
  */
-
 public class GetAssetsUtil {
 
 

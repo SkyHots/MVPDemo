@@ -7,8 +7,8 @@ package fupp.mvp_demo;
 
 public class Constants {
 
-
-    public static final String DEFAULT_IP = "180.76.119.10";//idvo.diveo.com.cn
+    //idvo.diveo.com.cn
+    public static final String DEFAULT_IP = "180.76.119.10";
     public static final String DEFAULT_PORT = "90";
 
 }
