@@ -15,12 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -84,9 +82,7 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
         mInputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mBinder = ButterKnife.bind(this);
         ActivityUtil.addActivity(this);
-
         mContext = this;
-
         mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
 
@@ -98,18 +94,20 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         if (mDialog != null && mDialog.isShowing()) {
             mDialog.dismiss();
         }
         mDialog = null;
 
-        if (mBinder != null)
+        if (mBinder != null) {
             mBinder.unbind();
+        }
 
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.onDestroy();
+        }
         ActivityUtil.removeActivity(this);
+        super.onDestroy();
     }
 
     @Override
@@ -191,21 +189,6 @@ public abstract class BaseActivity<P extends BasePresenter, M extends BaseModel>
 
     public void popupInputMethodWindow(View view) {
         new Handler().postDelayed(() -> mInputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS), 0);
-    }
-
-    // 根据EditText所在坐标和用户点击的坐标相对比，来判断是否隐藏键盘
-    private boolean isShouldHideKeyboard(View v, MotionEvent event) {
-        if (v != null && (v instanceof EditText)) {
-            int[] l = {0, 0};
-            v.getLocationInWindow(l);
-            int left = l[0],
-                    top = l[1],
-                    bottom = top + v.getHeight(),
-                    right = left + v.getWidth();
-            return !(event.getX() > left && event.getX() < right
-                    && event.getY() > top && event.getY() < bottom);
-        }
-        return false;
     }
 
     public void dismissPD() {
