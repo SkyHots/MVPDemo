@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_user_details_nv_bottom_dialog"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_user_details_bottom_dialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="7dp"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_line_user_details_bottom" />
+
+        <TextView
+            android:id="@+id/dialog_bottom_take_photo_tv_select_photo"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="7dp"
+            android:drawableLeft="@mipmap/user_ic_album"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="从相册选择"
+            android:textColor="#ff24272b"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dialog_bottom_take_photo_tv_take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:drawableLeft="@mipmap/user_ic_photograph"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="拍照"
+            android:textColor="#ff24272b"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/dialog_bottom_take_photo_btn_canle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="15dp"
+            android:text="取消"
+            android:textColor="#ff3e4a59"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
