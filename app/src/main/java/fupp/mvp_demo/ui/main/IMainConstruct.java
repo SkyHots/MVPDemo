@@ -3,6 +3,7 @@ package fupp.mvp_demo.ui.main;
 import fupp.mvp_demo.base.BaseModel;
 import fupp.mvp_demo.base.BasePresenter;
 import fupp.mvp_demo.base.BaseView;
+import okhttp3.ResponseBody;
 import rx.Observable;
 
 /**
@@ -16,17 +17,20 @@ public interface IMainConstruct {
 
     interface IMainModel extends BaseModel {
 
-        Observable<String> getData();
+        Observable<ResponseBody> getData();
 
     }
 
     interface IMainView extends BaseView {
 
+        void getDataSuccess(String result);
+        void getDataFail(Throwable throwable);
+
 
     }
 
-    abstract class IMainPresenter extends BasePresenter<IMainView, IMainModel> {
-        public abstract void getData();
+    abstract class IMainPresenter extends BasePresenter<IMainModel, IMainView> {
+
 
     }
 

@@ -1,10 +1,15 @@
 package fupp.mvp_demo.ui.main;
 
+import android.util.Log;
+import android.widget.TextView;
+
 import fupp.mvp_demo.R;
 import fupp.mvp_demo.base.BaseActivity;
 
-public class MainActivity extends BaseActivity<MainPresenter,MainModel> implements IMainConstruct.IMainView {
+public class MainActivity extends BaseActivity<MainPresenter, MainModel> implements IMainConstruct.IMainView {
 
+
+    private TextView mTextView;
 
     @Override
     public int getLayoutId() {
@@ -13,21 +18,27 @@ public class MainActivity extends BaseActivity<MainPresenter,MainModel> implemen
 
     @Override
     public void initView() {
-
+        mTextView = findViewById(R.id.textView);
     }
 
     @Override
-    public void showLoading(int requestCode) {
-
+    public void showLoading() {
+        Log.e("Tag", "showLoading: ");
     }
 
     @Override
-    public void hideLoading(int requestCode) {
-
+    public void hideLoading() {
+        Log.e("Tag", "hideLoading: ");
     }
 
     @Override
-    public void onError(int requestCode, Throwable throwable) {
+    public void getDataSuccess(String result) {
+        mTextView.setText(result);
+        Log.e("Tag", "getDataSuccess: " + result);
+    }
 
+    @Override
+    public void getDataFail(Throwable throwable) {
+        Log.e("Tag", "getDataFail: " + throwable.getMessage());
     }
 }

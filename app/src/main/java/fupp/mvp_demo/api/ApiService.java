@@ -36,7 +36,7 @@ public interface ApiService {
 
     //从网络获取图片
     @GET
-    Observable<String> getBaiDu(@Url String fileUrl);
+    Observable<ResponseBody> getBaiDu(@Url String fileUrl);
 
 
 }

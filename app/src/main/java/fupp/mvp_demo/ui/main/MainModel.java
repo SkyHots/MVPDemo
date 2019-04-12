@@ -1,6 +1,7 @@
 package fupp.mvp_demo.ui.main;
 
 import fupp.mvp_demo.api.Api;
+import okhttp3.ResponseBody;
 import rx.Observable;
 
 /**
@@ -14,7 +15,7 @@ public class MainModel implements IMainConstruct.IMainModel {
 
 
     @Override
-    public Observable<String> getData() {
+    public Observable<ResponseBody> getData() {
         return Api.get().mService.getBaiDu("http://www.baidu.com/");
     }
 }
