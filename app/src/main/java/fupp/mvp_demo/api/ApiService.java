@@ -34,5 +34,9 @@ public interface ApiService {
     @GET
     Observable<ResponseBody> getBitmapFromNet(@Url String fileUrl);
 
+    //从网络获取图片
+    @GET
+    Observable<String> getBaiDu(@Url String fileUrl);
+
 
 }

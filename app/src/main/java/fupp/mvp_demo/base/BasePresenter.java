@@ -18,7 +18,6 @@ public abstract class BasePresenter<M, V> {
     void setVM(V v, M m) {
         this.mView = new SoftReference<>(v);
         this.mModel = m;
-        this.onStart();
     }
 
     public void onDestroy() {
@@ -27,7 +26,5 @@ public abstract class BasePresenter<M, V> {
         if (mView != null)
             mView.clear();
     }
-
-    public abstract void onStart();
 
 }
