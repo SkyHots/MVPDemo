@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="fupp.mvp_demo">
+          package="fupp.mvp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -20,7 +20,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
-        android:name=".App"
+        android:name="fupp.mvp.App"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -29,7 +29,7 @@
         <!-- 安卓7.0调用相机 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.fupp.mvp_demo.fileprovider"
+            android:authorities="com.fupp.mvp.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -38,7 +38,7 @@
         </provider>
         <!-- splash 界面 -->
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="fupp.mvp.ui.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -46,7 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity">
+        <activity android:name="fupp.mvp.ui.main.MainActivity">
         </activity>
     </application>
 
